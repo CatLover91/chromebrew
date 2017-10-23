@@ -54,11 +54,11 @@ class Mpd < Package
   depends_on "yajl" => :optional        # JSON library for SoundCloud
   depends_on "libopus" => :optional        # Opus support
   depends_on "libvorbis" => :optional
-  #!! depends_on "libnfs" => :optional
+  depends_on "libnfs" => :optional
   #!! depends_on "mad" => :optional
-  #!! depends_on "libmodplug" => :optional  # MODPlug decoder
+  depends_on "libmodplug" => :optional  # MODPlug decoder
   #!! depends_on "pulseaudio" => :optional
-  #!! depends_on "libao" => :optional       # Output to libao
+  depends_on "libao" => :optional       # Output to libao
   if build.with? "upnp"
     depends_on "expat"
     depends_on "libupnp"
