@@ -31,7 +31,7 @@ class Mpd < Package
   depends_on "boost" => :build
   depends_on "glib"
   #!! depends_on "libid3tag"
-  #!! depends_on "sqlite"
+  depends_on "sqlite"
   #!! depends_on "libsamplerate"
   #!! depends_on "icu4c"
 
@@ -41,17 +41,17 @@ class Mpd < Package
   depends_on "ffmpeg" # lots of codecs
   # mpd also supports mad, mpg123, libsndfile, and audiofile, but those are
   # redundant with ffmpeg
-  #!! depends_on "fluid-synth"              # MIDI
-  #!! depends_on "faad2"                    # MP4/AAC
-  #!! depends_on "wavpack" => :optional     # WavPack
+  depends_on "fluid-synth"              # MIDI
+  depends_on "faad2"                    # MP4/AAC
+   depends_on "wavpack" => :optional     # WavPack
   #!! depends_on "libshout" => :optional    # Streaming (also pulls in Vorbis encoding)
   depends_on "libmp3lame" => :optional        # MP3 encoding
-  #!! depends_on "two-lame" => :optional    # MP2 encoding
-  #!! depends_on "flac" => :optional        # Flac encoding
+  depends_on "two-lame" => :optional    # MP2 encoding
+  depends_on "flac" => :optional        # Flac encoding
   #!! depends_on "jack" => :optional        # Output to JACK
-  #!! depends_on "libmms" => :optional      # MMS input
+  depends_on "libmms" => :optional      # MMS input
   #!! depends_on "libzzip" => :optional     # Reading from within ZIPs
-  #!! depends_on "yajl" => :optional        # JSON library for SoundCloud
+  depends_on "yajl" => :optional        # JSON library for SoundCloud
   depends_on "libopus" => :optional        # Opus support
   depends_on "libvorbis" => :optional
   #!! depends_on "libnfs" => :optional
@@ -61,7 +61,7 @@ class Mpd < Package
   #!! depends_on "libao" => :optional       # Output to libao
   if build.with? "upnp"
     depends_on "expat"
-    #!! depends_on "libupnp"
+    depends_on "libupnp"
   end
 
   def self.install
